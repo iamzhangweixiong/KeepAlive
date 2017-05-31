@@ -19,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".GrayService"
+            android:process=":bg" />
+        <service
+            android:name=".GrayService$InnerGrayService"
+            android:process=":gray" />
     </application>
 
 </manifest>
