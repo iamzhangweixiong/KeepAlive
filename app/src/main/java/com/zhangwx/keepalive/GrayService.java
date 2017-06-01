@@ -20,8 +20,6 @@ public class GrayService extends Service {
     public static final int GRAY_SERVICE_ID = -1001;
     public static final int GRAY_WAKE_REQUEST = 6666;
 
-    private final static int ALARM_INTERVAL = 5 * 60 * 1000;//5分钟
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.e(TAG, "onStartCommand");
@@ -39,7 +37,7 @@ public class GrayService extends Service {
         PendingIntent operation = PendingIntent.getBroadcast(
                 this, GRAY_WAKE_REQUEST, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.setInexactRepeating(
-                AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), ALARM_INTERVAL, operation);
+                AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, operation);
 
         return START_STICKY;
     }
