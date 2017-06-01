@@ -20,7 +20,7 @@ public class GrayService extends Service {
     public static final int GRAY_SERVICE_ID = -1001;
     public static final int GRAY_WAKE_REQUEST = 6666;
 
-    private final static int ALARM_INTERVAL = 5 * 60 * 1000;//1分钟
+    private final static int ALARM_INTERVAL = 5 * 60 * 1000;//5分钟
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
