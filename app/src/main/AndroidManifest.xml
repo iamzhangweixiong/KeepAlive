@@ -22,10 +22,23 @@
 
         <service
             android:name=".GrayService"
+            android:enabled="true"
+            android:exported="false"
             android:process=":bg" />
         <service
             android:name=".GrayService$InnerGrayService"
+            android:enabled="true"
+            android:exported="false"
             android:process=":gray" />
+
+        <receiver
+            android:name=".WakeReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.zhangwx.graywake" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
