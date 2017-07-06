@@ -52,7 +52,7 @@
         </receiver>
         <!-- end 灰色保活 -->
 
-        <!-- start SyncAdapter-->
+        <!-- start SyncAdapter -->
         <provider
             android:name=".sync.AccountProvider"
             android:authorities="com.zhangwx.z_utils.provider.account"
@@ -81,7 +81,7 @@
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
-        <!-- end SyncAdapter-->
+        <!-- end SyncAdapter -->
 
     </application>
 

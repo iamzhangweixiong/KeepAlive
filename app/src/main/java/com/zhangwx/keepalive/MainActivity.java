@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, GrayService.class);
-                startService(intent);
-//                SyncUtil.createSyncAccount(MainActivity.this);
+//                Intent intent = new Intent(MainActivity.this, GrayService.class);
+//                startService(intent);
+                SyncUtil.createSyncAccount(MainActivity.this);
             }
         });
     }
