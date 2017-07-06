@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.zhangwx.keepalive.gray.GrayService;
+import com.zhangwx.keepalive.sync.SyncUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, GrayService.class);
                 startService(intent);
+//                SyncUtil.createSyncAccount(MainActivity.this);
             }
         });
     }

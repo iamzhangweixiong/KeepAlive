@@ -1,4 +1,4 @@
-package com.zhangwx.keepalive;
+package com.zhangwx.keepalive.gray;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
