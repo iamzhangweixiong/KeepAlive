@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhangwx.keepalive">
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <!-- Required for fetching feed data. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Required to register a SyncStatusObserver to display a "syncing..." progress indicator. -->
+    <uses-permission
+        android:name="android.permission.MANAGE_ACCOUNTS"
+        android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
     <!-- Required to enable our SyncAdapter after it's created. -->
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
@@ -35,12 +39,12 @@
             android:name=".gray.GrayService"
             android:enabled="true"
             android:exported="false"
-            android:process=":bg" />
+            android:process=":service" />
         <service
             android:name=".gray.GrayService$InnerGrayService"
             android:enabled="true"
             android:exported="false"
-            android:process=":gray" />
+            android:process=":service" />
 
         <receiver
             android:name=".gray.WakeReceiver"
@@ -55,10 +59,11 @@
         <!-- start SyncAdapter -->
         <provider
             android:name=".sync.AccountProvider"
-            android:authorities="com.zhangwx.z_utils.provider.account"
+            android:authorities="com.zhangwx.provider.account"
             android:exported="true"
             android:process=":service"
             android:syncable="true" />
+
         <service
             android:name=".sync.SyncService"
             android:exported="true"
@@ -83,6 +88,15 @@
         </service>
         <!-- end SyncAdapter -->
 
+        <service
+            android:name=".common.CommonService"
+            android:exported="false"
+            android:process=":service" >
+            <intent-filter>
+                <action android:name="com.zhangwx.createsync" />
+                <action android:name="com.zhangwx.removesync" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
