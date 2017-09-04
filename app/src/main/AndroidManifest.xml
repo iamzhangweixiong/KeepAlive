@@ -89,7 +89,9 @@
         <!-- end SyncAdapter -->
 
         <!-- start JobScheduler -->
-        <service android:name=".jobscheduler.JobSchedulerService" />
+        <service
+            android:name=".jobscheduler.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
         <!-- end JobScheduler -->
 
         <service
