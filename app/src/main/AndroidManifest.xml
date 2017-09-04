@@ -88,6 +88,10 @@
         </service>
         <!-- end SyncAdapter -->
 
+        <!-- start JobScheduler -->
+        <service android:name=".jobscheduler.JobSchedulerService" />
+        <!-- end JobScheduler -->
+
         <service
             android:name=".common.CommonService"
             android:exported="false"
@@ -98,7 +102,6 @@
             </intent-filter>
         </service>
 
-        <service android:name=".jobscheduler.JobSchedulerService" />
     </application>
 
 </manifest>
