@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.zhangwx.keepalive.sync.SyncUtil;
+import com.zhangwx.keepalive.syncadater.SyncUtil;
 
 /**
  * Created by zhangwx

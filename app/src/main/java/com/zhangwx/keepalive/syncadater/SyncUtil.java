@@ -1,4 +1,4 @@
-package com.zhangwx.keepalive.sync;
+package com.zhangwx.keepalive.syncadater;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;

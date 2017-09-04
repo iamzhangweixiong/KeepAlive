@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.zhangwx.keepalive.common.CommonService;
-import com.zhangwx.keepalive.gray.GrayService;
-import com.zhangwx.keepalive.sync.SyncUtil;
 
 public class MainActivity extends AppCompatActivity {
 

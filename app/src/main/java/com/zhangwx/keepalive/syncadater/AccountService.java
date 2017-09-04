@@ -1,4 +1,4 @@
-package com.zhangwx.keepalive.sync;
+package com.zhangwx.keepalive.syncadater;
 
 import android.app.Service;
 import android.content.Intent;

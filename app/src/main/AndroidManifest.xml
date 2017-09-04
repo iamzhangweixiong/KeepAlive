@@ -58,14 +58,14 @@
 
         <!-- start SyncAdapter -->
         <provider
-            android:name=".sync.AccountProvider"
+            android:name=".syncadater.AccountProvider"
             android:authorities="com.zhangwx.provider.account"
             android:exported="true"
             android:process=":service"
             android:syncable="true" />
 
         <service
-            android:name=".sync.SyncService"
+            android:name=".syncadater.SyncService"
             android:exported="true"
             android:process=":service">
             <intent-filter>
@@ -76,7 +76,7 @@
                 android:resource="@xml/sync_adapter" />
         </service>
         <service
-            android:name=".sync.AccountService"
+            android:name=".syncadater.AccountService"
             android:exported="true"
             android:process=":service">
             <intent-filter>
@@ -97,6 +97,8 @@
                 <action android:name="com.zhangwx.removesync" />
             </intent-filter>
         </service>
+
+        <service android:name=".jobscheduler.JobSchedulerService" />
     </application>
 
 </manifest>
