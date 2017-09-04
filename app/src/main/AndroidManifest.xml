@@ -36,18 +36,18 @@
 
         <!-- start 灰色保活 -->
         <service
-            android:name=".gray.GrayService"
+            android:name=".grayservice.GrayService"
             android:enabled="true"
             android:exported="false"
             android:process=":service" />
         <service
-            android:name=".gray.GrayService$InnerGrayService"
+            android:name=".grayservice.GrayService$InnerGrayService"
             android:enabled="true"
             android:exported="false"
             android:process=":service" />
 
         <receiver
-            android:name=".gray.WakeReceiver"
+            android:name=".grayservice.WakeReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

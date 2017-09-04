@@ -1,4 +1,4 @@
-package com.zhangwx.keepalive.gray;
+package com.zhangwx.keepalive.grayservice;
 
 import android.app.AlarmManager;
 import android.app.Notification;
