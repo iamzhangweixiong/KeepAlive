@@ -15,6 +15,10 @@ import android.view.View;
 import com.zhangwx.keepalive.common.CommonService;
 import com.zhangwx.keepalive.jobscheduler.JobSchedulerService;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int JOB_ID = 0;
@@ -23,32 +27,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, GrayService.class);
-                Intent intent = new Intent(MainActivity.this, CommonService.class);
-                intent.setAction(CommonService.ACTION_CREATE);
-                startService(intent);
-            }
-        });
-
-        findViewById(R.id.remove).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CommonService.class);
-                intent.setAction(CommonService.ACTION_REMOVE);
-                startService(intent);
-            }
-        });
 
 //        startSchedulerJob();
     }
 
+    @OnClick(R.id.fab)
+    void fabClick() {
+//      Intent intent = new Intent(MainActivity.this, GrayService.class);
+        Intent intent = new Intent(MainActivity.this, CommonService.class);
+        intent.setAction(CommonService.ACTION_CREATE);
+        startService(intent);
+    }
+
+    @OnClick(R.id.remove)
+    void removeClick() {
+        Intent intent = new Intent(MainActivity.this, CommonService.class);
+        intent.setAction(CommonService.ACTION_REMOVE);
+        startService(intent);
+    }
 
     private void startSchedulerJob() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
