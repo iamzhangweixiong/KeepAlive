@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import com.zhangwx.keepalive.common.AliveHelper;
 import com.zhangwx.keepalive.common.CommonService;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
