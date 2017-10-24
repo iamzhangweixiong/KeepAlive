@@ -4,7 +4,10 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
+import android.os.PowerManager;
+import android.provider.Settings;
 
 import com.zhangwx.keepalive.jobscheduler.JobSchedulerService;
 
@@ -29,5 +32,17 @@ public class AliveHelper {
                 //If something goes wrong
             }
         }
+    }
+
+    public static boolean needIgnoreOpti(Context context, String packageName) {
+        boolean needIgnore = false;
+        boolean exists = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            needIgnore = !pm.isIgnoringBatteryOptimizations(packageName);
+            Intent intent = new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+            exists = intent.resolveActivityInfo(context.getPackageManager(), 0) != null;
+        }
+        return needIgnore && exists;
     }
 }

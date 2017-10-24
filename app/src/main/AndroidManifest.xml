@@ -17,6 +17,9 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- 电池加白 -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
