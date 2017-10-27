@@ -34,7 +34,7 @@ public class AliveHelper {
         }
     }
 
-    public static boolean needIgnoreOpti(Context context, String packageName) {
+    public static boolean needIgnoreOptimizations(Context context, String packageName) {
         boolean needIgnore = false;
         boolean exists = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.white)
     void whiteClick() {
-        if (AliveHelper.needIgnoreOpti(this, getPackageName())) {
+        if (AliveHelper.needIgnoreOptimizations(this, getPackageName())) {
             Intent intent = new Intent();
             String packageName = getPackageName();
             intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
